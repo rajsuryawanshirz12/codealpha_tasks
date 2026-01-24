@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Raj Suryawanshi">
+  <link rel="shortcut icon" href="favicom2.png">
+
+  <meta name="description" content="Buy Premium Sneakers & Shoes Online in India" />
+  <meta name="keywords" content="bootstrap, sneakers, nike, jordan, india" />
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>DropZone India - Buy Premium Sneakers & Shoes Online in India</title>
+
+  <style>
+    /* Wishlist Heart Icon Styling */
+    .wishlist-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 10;
+        color: #ccc;
+        font-size: 1.2rem;
+        transition: all 0.2s ease;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .wishlist-btn:hover {
+        color: #ff4d4d;
+        transform: scale(1.1);
+    }
+    .wishlist-btn.active-heart {
+        color: #ff4d4d !important;
+        animation: heartPulse 0.4s ease-in-out;
+    }
+    .wishlist-btn.active-heart i {
+        font-weight: 900 !important; /* Force Solid Icon */
+    }
+    @keyframes heartPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+    }
+
+    /* Product Card Enhancements */
+    .product-item {
+        transition: 0.3s all ease;
+        background: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        position: relative;
+        display: block;
+        text-decoration: none !important;
+        border: 1px solid transparent;
+        overflow: hidden;
+    }
+    .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        border-color: #eee;
+    }
+
+    /* Cross Icon (Cart) Styling Override */
+    .product-item .icon-cross {
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin: 0 !important;
+        background: #2f2f2f;
+        width: 35px;
+        height: 35px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+    .product-item .icon-cross img {
+        position: static !important;
+        transform: none !important;
+        width: 12px;
+        height: auto;
+    }
+    .product-item .icon-cross:hover {
+        background: #3b5d50;
+        transform: scale(1.1) !important;
+    }
+
+    /* Buy Now Button Styles */
+    .btn-buy-now {
+        background-color: #3b5d50;
+        color: white;
+        border-radius: 20px;
+        padding: 6px 15px;
+        font-size: 11px;
+        font-weight: 700;
+        text-decoration: none !important;
+        transition: 0.3s;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 6px rgba(59, 93, 80, 0.2);
+    }
+    .btn-buy-now:hover {
+        background-color: #2f4858;
+        color: white;
+        box-shadow: 0 6px 12px rgba(47, 72, 88, 0.3);
+        transform: translateY(-2px);
+    }
+
+    /* Typography Fixes inside Card */
+    .product-title {
+        color: #2f2f2f;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 15px;
+    }
+    .product-price {
+        color: #3b5d50;
+        font-weight: 800;
+        font-size: 18px;
+        display: block;
+        margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="DropZone navigation bar">
+
+        <div class="container">
+            <a class="navbar-brand" href="index.html">DropZone<span>.</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsFurni">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li><a class="nav-link" href="all-kicks.html">All Kicks</a></li>
+                    <li><a class="nav-link" href="newdrops.html">New Drops</a></li>
+                    <li><a class="nav-link" href="brands.html">Brands</a></li>
+                    <li><a class="nav-link" href="ourstory.html">Our Story</a></li>
+                    <li><a class="nav-link" href="contact.html">Support</a></li>
+                </ul>
+
+                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                    <li style="margin-right: 20px;">
+                        <a class="nav-link" href="wishlist.html">
+                            <i class="fa-regular fa-heart" style="font-size: 22px; color:white; vertical-align: middle; margin-bottom: 2px;"></i>
+                        </a>
+                    </li>
+                    
+                    <li style="margin-right: 20px;">
+                        <a class="nav-link" href="#">
+                            <img src="images/user.svg" style="vertical-align: middle;">
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="nav-link" href="cart.html">
+                            <img src="images/cart.svg" style="vertical-align: middle;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <div class="intro-excerpt">
+                        <h1>The Ultimate<span class="d-block"> Sneaker Dropzone</span></h1>
+                        <p class="mb-4">Your primary source for verified authentic kicks. From limited-edition retros to the latest performance drops, we check the drip so you don't have to.</p>
+                        <p><a href="all-kicks.html" class="btn btn-secondary me-2">Shop Now</a><a href="brands.html" class="btn btn-white-outline">Explore Brands</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="hero-img-wrap">
+                        <img src="images/nikesneakergreen2.png" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="product-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                    <h2 class="mb-4 section-title">The Rarest Kicks With Latest Drops</h2>
+                    <p class="mb-4">Stop hunting across multiple sites. We bring the most sought-after releases from Nike, Jordan, and Yeezy directly to you. </p>
+                    <p><a href="all-kicks.html" class="btn">Explore</a></p>
+                </div> 
+
+                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)">
+                            <i class="fa-regular fa-heart"></i>
+                        </a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'nb-bb550-home', 'NB BB550', '₹8,699', 'images/nb1.png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=nb-bb550-home" class="text-decoration-none d-block">
+                            <img src="images/nb1.png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">NB BB550</h3>
+                            <strong class="product-price">₹8,699</strong>
+                        </a>
+
+                       <div class="d-flex justify-content-between align-items-center mt-3">
+    <a href="javascript:void(0);" class="icon-cross" 
+   onclick="addToCart(this, 'nb-bb550-home', 'NB BB550', '₹8,699', 'images/nb1.png')">
+    <img src="images/cross.svg" class="img-fluid">
+</a>
+    <a href="checkout.html" class="btn-buy-now">Buy Now</a>
+</div>
+                    </div>
+                </div> 
+
+                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)">
+                            <i class="fa-regular fa-heart"></i>
+                        </a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'nb-574-home', 'NB 574 Legacy Suede', '₹7,149', 'images/nb2.png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=nb-574-home" class="text-decoration-none d-block">
+                            <img src="images/nb2.png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">NB 574 Legacy Suede</h3>
+                            <strong class="product-price">₹7,149</strong>
+                        </a>
+
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                          <a href="javascript:void(0);" class="icon-cross" 
+   onclick="addToCart(this, 'nb-574-home', 'NB 574 Legacy Suede', '₹7,149', 'images/nb2.png')">
+    <img src="images/cross.svg" class="img-fluid">
+</a>
+                            <a href="checkout.html" class="btn-buy-now">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)">
+                            <i class="fa-regular fa-heart"></i>
+                        </a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'nb-373-home', 'NB 373 Suede', '₹4,269', 'images/nb3.png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=nb-373-home" class="text-decoration-none d-block">
+                            <img src="images/nb3.png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">NB 373 Suede</h3>
+                            <strong class="product-price">₹4,269</strong>
+                        </a>
+
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                         <a href="javascript:void(0);" class="icon-cross" 
+   onclick="addToCart(this, 'nb-373-home', 'NB 373 Suede', '₹4,269', 'images/nb3.png')">
+    <img src="images/cross.svg" class="img-fluid">
+</a>
+                            <a href="checkout.html" class="btn-buy-now">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="why-choose-section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Why Choose DropZone</h2>
+                    <p>Your premier destination for verified authentic sneakers. We combine the fastest logistics in the game with a 100% guarantee on every 'Drip Check' we perform.</p>
+
+                    <div class="row my-5">
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="images/truck.svg" alt="Image" class="img-fluid">
+                                </div>
+                                <h3> Priority &amp; Drop Shipping</h3>
+                                <p>Never miss a beat with our lightning-fast fulfillment. We ensure your latest pickups are processed and shipped within 24 hours of the drop.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="images/bag.svg" alt="Image" class="img-fluid">
+                                </div>
+                                <h3>Verified Authenticity</h3>
+                                <p>Shop with total confidence. Every pair undergoes our rigorous 'Drip Check' process by expert authenticators before it ever leaves our vault.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="images/support.svg" alt="Image" class="img-fluid">
+                                </div>
+                                <h3>Sneakerhead Support</h3>
+                                <p>Our dedicated team of experts is available 24/7 to help with sizing questions, order tracking, or finding that specific grail you've been hunting.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-6">
+                            <div class="feature">
+                                <div class="icon">
+                                    <img src="images/return.svg" alt="Image" class="img-fluid">
+                                </div>
+                                <h3>Risk-Free Trading</h3>
+                                <p>Not the right fit? No problem. We offer a seamless, hassle-free return process to ensure you always end up with the perfect pair for your rotation.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="img-wrap">
+                        <img src="images/why us2.png" alt="Image" class="img-fluid">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="we-help-section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="imgs-grid">
+                        <div class="grid grid-1"><img src="images/newgrid1.png" alt="Untree.co"></div>
+                        <div class="grid grid-2"><img src="images/newgrid3.png" alt="Untree.co"></div>
+                        <div class="grid grid-3"><img src="images/newgrid2.png" alt="Untree.co"></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 ps-lg-5">
+                    <h2 class="section-title mb-4">We Help You Secure the Hardest Drops</h2>
+                    <p>Finding your grails shouldn't be a gamble. At DropZone, we simplify the sneaker game by providing a curated platform where authenticity meets accessibility. Whether you're looking for the latest performance runners or iconic streetwear retros, we bridge the gap between you and the world's most exclusive footwear.</p>
+
+                    <ul class="list-unstyled custom-list my-4">
+                        <li>Multi-Point Authenticity Verification</li>
+                        <li>Exclusive Access to Limited Releases</li>
+                        <li>Secure & Transparent Global Sourcing</li>
+                        <li>Premium Condition Guaranteed</li>
+                    </ul>
+                    <p><a href="all-kicks.html" class="btn">Explore</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popular-product">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="product-item-sm d-flex">
+                        <div class="thumbnail">
+                            <img src="images/productshoe1-Photoroom.png" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="pt-3">
+                            <h3>Air Jordan 1 Retro</h3>
+                            <p>The icon that started it all. High-top design in the classic 'Green' colorway.</p>
+                            <p><a href="blog-jordan-1.html">Read More</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="product-item-sm d-flex">
+                        <div class="thumbnail">
+                            <img src="images/productshoe1 (1)-Photoroom.png" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="pt-3">
+                            <h3>Nike Dunk Low</h3>
+                            <p>The ultimate versatile sneaker. Clean black and white leather for any fit.</p>
+                            <p><a href="blog-dunk-low.html">Read More</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="product-item-sm d-flex">
+                        <div class="thumbnail">
+                            <img src="images/productshoe1 (2)-Photoroom.png" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="pt-3">
+                            <h3>Yeezy Boost 350 V2</h3>
+                            <p>Unmatched comfort meet futuristic design. Featuring Adidas' signature Boost technology.</p>
+                            <p><a href="blog-yeezy-350.html">Read More</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="testimonial-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <h2 class="section-title">Community Trust</h2>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="testimonial-slider-wrap text-center">
+
+                        <div id="testimonial-nav">
+                            <span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+                            <span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+                        </div>
+
+                        <div class="testimonial-slider">
+                            
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;Finally, a marketplace I can trust. The 'Drip Check' verification process is the real deal. I copped a pair of Jordan 1 'Lost and Found' and they passed every legit check I ran. 10/10 for peace of mind.&rdquo;</p>
+                                            </blockquote>
+
+                                            <div class="author-info">
+                                
+                                                <h3 class="font-weight-bold">Raj Suryawanshi</h3>
+                                                <span class="position d-block mb-3">Hypebeast Member</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;I've never seen a drop ship this fast. Ordered on Monday, had them on my feet by Wednesday morning. Double-boxed and the original packaging was pristine. DropZone is now my first choice for every release.&rdquo;</p>
+                                            </blockquote>
+
+                                            <div class="author-info">
+                                                
+                                                <h3 class="font-weight-bold">Nupoor Mirajkar</h3>
+                                                <span class="position d-block mb-3">Fashion Influencer</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 mx-auto">
+
+                                        <div class="testimonial-block text-center">
+                                            <blockquote class="mb-5">
+                                                <p>&ldquo;The inventory here is insane. I've been hunting for a deadstock pair of SB Dunks for months and found them here at a fair price. The customer support team even helped me confirm the sizing before I hit buy.&rdquo;</p>
+                                            </blockquote>
+
+                                            <div class="author-info">
+                                                
+                                                <h3 class="font-weight-bold">Heramb Bedke</h3>
+                                                <span class="position d-block mb-3">Grail Hunter</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> 
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-section">
+    <div class="container">
+        
+        <div class="row mb-5 align-items-center">
+            <div class="col-md-6">
+                <h2 class="section-title">Latest Blog Drops</h2>
+            </div>
+            <div class="col-md-6 text-start text-md-end">
+                <a href="blog.html" class="more-link">View All Posts <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                <div class="post-entry">
+                    <a href="blog-details.html" class="post-thumbnail">
+                        <img src="images/postnew1.png" alt="How to Spot Fakes" class="img-fluid">
+                        <span class="badge-custom">Guide</span> </a>
+                    <div class="post-content-entry">
+                        <h3><a href="blog-details.html">How to Spot Fakes: 2026 Guide</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Expert Team</a></span> <span>on <a href="#">Jan 15, 2026</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                <div class="post-entry">
+                    <a href="blog-cleaning.html" class="post-thumbnail">
+                        <img src="images/postnew2.png" alt="Shoe Care" class="img-fluid">
+                        <span class="badge-custom">Care</span> </a>
+                    <div class="post-content-entry">
+                        <h3><a href="blog-cleaning.html">Keep Your White Kicks Fresh</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Sole Doctor</a></span> <span>on <a href="#">Jan 12, 2026</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                <div class="post-entry">
+                    <a href="blog-sustainable.html" class="post-thumbnail">
+                        <img src="images/postnew3.png" alt="Trends" class="img-fluid">
+                        <span class="badge-custom">Trend</span> </a>
+                    <div class="post-content-entry">
+                        <h3><a href="blog-sustainable.html">The Rise of Sustainable Soles</a></h3>
+                        <div class="meta">
+                            <span>by <a href="#">Trend Hunter</a></span> <span>on <a href="#">Jan 10, 2026</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <footer class="footer-section">
+        <div class="container relative">
+
+            <div class="sofa-img">
+                <img src="images/shoerz1 (1)-Photoroom.png" alt="Image" class="img-fluid">
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="subscription-form">
+                        <h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Join the Drop List</span></h3>
+
+                        <form action="#" class="row g-3">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="col-auto">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary">
+                                    <span class="fa fa-paper-plane"></span>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap"><a href="index.html" class="footer-logo">DropZone<span>.</span></a></div>
+                    <p class="mb-4">Your primary source for verified authentic kicks. From limited-edition retros to the latest performance drops, we check the drip so you don't have to.</p>
+
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="ourstory.html">About us</a></li>
+                                <li><a href="authenticity.html">Authenticity Check</a></li>
+                                <li><a href="blog.html">Blog Drops</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="knowledge.html">Knowledge base</a></li>
+                                <li><a href="https://wa.me/919876543210" target="_blank">Live chat</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="jobs.html">Jobs</a></li>
+                                <li><a href="team.html">Our team</a></li>
+                                <li><a href="team.html">Leadership</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="all-kicks.html?brand=nike">Nike</a></li>
+                                <li><a href="all-kicks.html?brand=adidas">Adidas</a></li>
+                                <li><a href="all-kicks.html?brand=newbalance">New Balance</a></li>
+                                <li><a href="all-kicks.html?brand=converse">Converse</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://rostech.in">Raj Suryawanshi</a> Distributed By <a href="https://rostech.com">RosTech</a>  
+        </p>
+                    </div>
+
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <ul class="list-unstyled d-inline-flex ms-auto">
+                            <li class="me-4"><a href="terms.html">Terms &amp; Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+      function toggleWishlist(event, btn) {
+          event.preventDefault(); // Stop the page from redirecting
+          const icon = btn.querySelector('i');
+          
+          if (btn.classList.contains('active-heart')) {
+              // Remove Red State
+              btn.classList.remove('active-heart');
+              icon.classList.remove('fa-solid');
+              icon.classList.add('fa-regular');
+          } else {
+              // Add Red State (Solid Icon)
+              btn.classList.add('active-heart');
+              icon.classList.remove('fa-regular');
+              icon.classList.add('fa-solid');
+          }
+      }
+    </script>
+	<script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/user.js"></script>
+</html>
+</body>
+</html>

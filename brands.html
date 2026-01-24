@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Raj Suryawanshi">
+  <link rel="shortcut icon" href="favicom2.png">
+
+  <meta name="description" content="Explore top sneaker brands at DropZone India." />
+  <meta name="keywords" content="Nike, Adidas, Jordan, New Balance, Sneakers India" />
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Brands - Buy Elite Brands Collection</title>
+
+  <style>
+
+     /* Brands Hero */
+    .hero-brands {
+        background-color: #3b5d50;
+        padding: 50px 0;
+        color: white;
+
+        /* ADD THIS LINE 👇 */
+    margin-bottom: 50px; 
+
+    }
+    
+
+    /* Internal CSS for the Brand Grid Animation */
+    .brand-link {
+        text-decoration: none !important;
+        color: inherit !important;
+    }
+    .brand-card {
+        background: #f8f9fa; 
+        border-radius: 15px; 
+        border: 1px solid #eee; 
+        transition: all 0.3s ease;
+        position: relative;
+        top: 0;
+    }
+    .brand-card:hover {
+        top: -10px;
+        background: #ffffff !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-color: #3b5d50;
+    }
+    .logo-container {
+        height: 80px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .brand-logo-img {
+        max-height: 50px; 
+        width: auto; 
+        max-width: 80%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+    .brand-card:hover .brand-logo-img {
+        transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">DropZone<span>.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsFurni">
+        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="all-kicks.html">All Kicks</a></li>
+          <li><a class="nav-link" href="newdrops.html">New Drops</a></li>
+          <li class="active"><a class="nav-link" href="brands.html">Brands</a></li>
+          <li><a class="nav-link" href="ourstory.html">Our Story</a></li>
+          <li><a class="nav-link" href="contact.html">Support</a></li>
+        </ul>
+         <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+    <li style="margin-right: 20px;">
+        <a class="nav-link" href="wishlist.html">
+            <i class="fa-regular fa-heart" style="font-size: 22px; color:white; vertical-align: middle; margin-bottom: 2px;"></i>
+        </a>
+    </li>
+    
+    <li style="margin-right: 20px;">
+        <a class="nav-link" href="#">
+            <img src="images/user.svg" style="vertical-align: middle;">
+        </a>
+    </li>
+    
+    <li>
+        <a class="nav-link" href="cart.html">
+            <img src="images/cart.svg" style="vertical-align: middle;">
+        </a>
+    </li>
+</ul>
+      </div>
+    </div>
+  </nav>
+
+ <div class="hero-brands">
+    <div class="container text-center">
+        <h1 class="fw-bold">The DropZone Roster</h1>
+        <p class="mb-0 text-white-50">Verified authenticity across every major label.</p>
+    </div>
+  </div>
+      
+      <div class="row">
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=nike" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/1-Photoroom.png" alt="Nike" class="brand-logo-img">
+                    </div>
+                    <h3>Nike</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=adidas" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/2-Photoroom.png" alt="Adidas" class="brand-logo-img">
+                    </div>
+                    <h3>Adidas</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=jordan" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/3-Photoroom.png" alt="Jordan" class="brand-logo-img">
+                    </div>
+                    <h3>Jordan</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=newbalance" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/4-Photoroom.png" alt="New Balance" class="brand-logo-img">
+                    </div>
+                    <h3>New Balance</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=puma" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/5-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Puma</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=converse" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/6-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Converse</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=reebok" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/7-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Reebok</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=vans" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/8-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Vans</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=asics" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/9-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Asics</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=yeezy" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/10-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Yeezy</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=underarmour" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/11-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Under Armour</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=fila" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/12-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Fila</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=skechers" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/13-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Skechers</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=onrunning" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/14-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>On Running</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=hoka" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/15-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Hoka</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=balenciaga" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/16-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Balenciaga</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=gucci" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/17-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Gucci</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=offwhite" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/18-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Off-White</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=salomon" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/19-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Salomon</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3 mb-5 text-center">
+            <a href="all-kicks.html?brand=saucony" class="brand-link">
+                <div class="feature p-4 brand-card">
+                    <div class="logo-container">
+                        <img src="images/20-Photoroom.png" class="brand-logo-img">
+                    </div>
+                    <h3>Saucony</h3>
+                </div>
+            </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+ <footer class="footer-section">
+        <div class="container relative">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="subscription-form">
+                        <h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Join the Drop List</span></h3>
+
+                        <form action="#" class="row g-3">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="col-auto">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary">
+                                    <span class="fa fa-paper-plane"></span>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap"><a href="index.html" class="footer-logo">DropZone<span>.</span></a></div>
+                    <p class="mb-4">Your primary source for verified authentic kicks. From limited-edition retros to the latest performance drops, we check the drip so you don't have to.</p>
+
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="ourstory.html">About us</a></li>
+                                <li><a href="authenticity.html">Authenticity Check</a></li>
+                                <li><a href="blog.html">Blog Drops</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="knowledge.html">Knowledge base</a></li>
+                                <li><a href="https://wa.me/919876543210" target="_blank">Live chat</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="jobs.html">Jobs</a></li>
+                                <li><a href="team.html">Our team</a></li>
+                                <li><a href="team.html">Leadership</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="all-kicks.html?brand=nike">Nike</a></li>
+                                <li><a href="all-kicks.html?brand=adidas">Adidas</a></li>
+                                <li><a href="all-kicks.html?brand=newbalance">New Balance</a></li>
+                                <li><a href="all-kicks.html?brand=converse">Converse</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://rostech.in">Raj Suryawanshi</a> Distributed By <a href="https://rostech.com">RosTech</a>  
+        </p>
+                    </div>
+
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <ul class="list-unstyled d-inline-flex ms-auto">
+                            <li class="me-4"><a href="terms.html">Terms &amp; Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

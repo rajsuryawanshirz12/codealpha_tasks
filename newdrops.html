@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Raj Suryawanshi">
+  <link rel="shortcut icon" href="favicom2.png">
+  <title>New Drops | DropZone India</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* Hero Section - Dark & Hype */
+    .hero-drops {
+        background-color: #2f2f2f;
+        padding: 80px 0;
+        color: white;
+        text-align: center;
+        background-image: radial-gradient(circle at center, #3b3b3b 0%, #2f2f2f 70%);
+    }
+    
+    /* Countdown Timer Box */
+    .countdown-box {
+        display: inline-block;
+        margin: 0 10px;
+        background: rgba(255,255,255,0.1);
+        padding: 15px 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+    .countdown-number { font-size: 2.5rem; font-weight: 800; color: #3b5d50; display: block; line-height: 1; }
+    .countdown-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #ccc; }
+
+    /* Product Card (Standardized) */
+    .product-item {
+        transition: 0.3s all ease;
+        background: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        position: relative;
+        display: block;
+        text-decoration: none !important;
+        border: 1px solid transparent;
+        overflow: hidden;
+    }
+    .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        border-color: #eee;
+    }
+
+    /* Wishlist Heart Icon */
+    .wishlist-btn {
+        position: absolute; top: 15px; right: 15px; z-index: 10;
+        color: #ccc; font-size: 1.4rem; transition: 0.2s; background: none; border: none; cursor: pointer;
+    }
+    .wishlist-btn:hover { color: #ff4d4d; transform: scale(1.1); }
+    .wishlist-btn.active-heart { color: #ff4d4d !important; }
+    .wishlist-btn.active-heart i { font-weight: 900 !important; }
+
+    /* --- BUTTON STYLES (MATCHING INDEX) --- */
+    /* 1. Black Circle Button (Left) */
+    .btn-add-cart {
+        width: 40px; height: 40px;
+        background-color: #2f2f2f; color: white;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        text-decoration: none; transition: 0.3s;
+        border: none; cursor: pointer;
+    }
+    .btn-add-cart:hover { background-color: #3b5d50; transform: scale(1.1); }
+    .btn-add-cart i { font-size: 16px; }
+    .active-tick { background-color: #3b5d50 !important; }
+
+    /* 2. Green Pill Button (Right) */
+    .btn-buy-now {
+        background-color: #3b5d50; color: white;
+        border-radius: 30px; padding: 10px 24px;
+        font-size: 12px; font-weight: 800;
+        text-transform: uppercase; letter-spacing: 1px;
+        text-decoration: none !important; transition: 0.3s;
+        box-shadow: 0 4px 10px rgba(59, 93, 80, 0.2);
+    }
+    .btn-buy-now:hover { background-color: #2f4858; transform: translateY(-2px); }
+
+    .product-title { color: #2f2f2f; font-size: 16px; font-weight: 700; margin-top: 15px; text-align: center; }
+    .product-price { color: #3b5d50; font-weight: 800; font-size: 18px; display: block; margin-top: 5px; text-align: center; }
+
+    /* Coming Soon Blur */
+    .coming-soon-card {
+        opacity: 0.7;
+        filter: grayscale(100%);
+        transition: 0.3s;
+        pointer-events: none; /* Can't click yet */
+    }
+    .coming-soon-badge {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        background: #2f2f2f;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: 800;
+        text-transform: uppercase;
+        z-index: 20;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">DropZone<span>.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsFurni">
+        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="all-kicks.html">All Kicks</a></li>
+          <li class="active"><a class="nav-link" href="newdrops.html">New Drops</a></li>
+          <li><a class="nav-link" href="brands.html">Brands</a></li>
+          <li><a class="nav-link" href="ourstory.html">Our Story</a></li>
+          <li><a class="nav-link" href="contact.html">Support</a></li>
+        </ul>
+        <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <li style="margin-right: 20px;"><a class="nav-link" href="wishlist.html"><i class="fa-regular fa-heart" style="font-size: 22px; color:white;"></i></a></li>
+            <li style="margin-right: 20px;"><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+            <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero-drops">
+    <div class="container">
+        <h5 class="text-uppercase ls-2 mb-3" style="color: #3b5d50; letter-spacing: 3px;">Next Major Drop: Travis Scott x Jordan</h5>
+        <h1 class="display-4 fw-bold mb-5">Drops In</h1>
+        
+        <div class="d-flex justify-content-center mb-5">
+            <div class="countdown-box">
+                <span class="countdown-number" id="days">02</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="hours">14</span>
+                <span class="countdown-label">Hrs</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="mins">45</span>
+                <span class="countdown-label">Mins</span>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="secs">30</span>
+                <span class="countdown-label">Secs</span>
+            </div>
+        </div>
+        
+        <button class="btn btn-outline-white rounded-pill px-4" onclick="alert('You will be notified 1 hour before the drop!')">
+            <i class="fa-regular fa-bell me-2"></i> Notify Me
+        </button>
+    </div>
+  </div>
+
+  <div class="untree_co-section product-section">
+    <div class="container">
+      
+      <div class="row mb-5">
+        <div class="col-lg-12">
+          <h2 class="section-title">Just Landed <span style="font-size: 0.5em; vertical-align: middle;" class="badge bg-success">NEW</span></h2>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-12 col-md-4 col-lg-3 mb-5">
+            <div class="product-item">
+                <a href="#" class="wishlist-btn" onclick="toggleWishlist(this, 'yeezy-350', 'Yeezy Boost 350 V2', '₹22,999', 'images/4-Photoroom (1).png')"><i class="fa-regular fa-heart"></i></a>
+                <a href="product-details.html?id=yeezy-350" class="text-decoration-none d-block">
+                    <img src="images/4-Photoroom (1).png" class="img-fluid product-thumbnail">
+                    <h3 class="product-title mt-3">Yeezy Boost 350 V2</h3>
+                    <strong class="product-price">₹22,999</strong>
+                </a>
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'yeezy-350', 'Yeezy Boost 350 V2', '₹22,999', 'images/4-Photoroom (1).png')">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                    <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3 mb-5">
+            <div class="product-item">
+                <a href="#" class="wishlist-btn" onclick="toggleWishlist(this, 'jordan-4', 'Jordan 4 Retro', '₹28,499', 'images/6-Photoroom (1).png')"><i class="fa-regular fa-heart"></i></a>
+                <a href="product-details.html?id=jordan-4" class="text-decoration-none d-block">
+                    <img src="images/6-Photoroom (1).png" class="img-fluid product-thumbnail">
+                    <h3 class="product-title mt-3">Jordan 4 Retro</h3>
+                    <strong class="product-price">₹28,499</strong>
+                </a>
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'jordan-4', 'Jordan 4 Retro', '₹28,499', 'images/6-Photoroom (1).png')">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                    <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3 mb-5">
+            <div class="product-item">
+                <a href="#" class="wishlist-btn" onclick="toggleWishlist(this, 'nb-9060', 'New Balance 9060', '₹14,999', 'images/7-Photoroom (1).png')"><i class="fa-regular fa-heart"></i></a>
+                <a href="product-details.html?id=nb-9060" class="text-decoration-none d-block">
+                    <img src="images/7-Photoroom (1).png" class="img-fluid product-thumbnail">
+                    <h3 class="product-title mt-3">New Balance 9060</h3>
+                    <strong class="product-price">₹14,999</strong>
+                </a>
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'nb-9060', 'New Balance 9060', '₹14,999', 'images/7-Photoroom (1).png')">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                    <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-3 mb-5">
+            <div class="product-item">
+                <a href="#" class="wishlist-btn" onclick="toggleWishlist(this, 'sb-dunk', 'Nike SB Dunk Low', '₹12,495', 'images/11-Photoroom (1).png')"><i class="fa-regular fa-heart"></i></a>
+                <a href="product-details.html?id=sb-dunk" class="text-decoration-none d-block">
+                    <img src="images/11-Photoroom (1).png" class="img-fluid product-thumbnail">
+                    <h3 class="product-title mt-3">Nike SB Dunk Low</h3>
+                    <strong class="product-price">₹12,495</strong>
+                </a>
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'sb-dunk', 'Nike SB Dunk Low', '₹12,495', 'images/11-Photoroom (1).png')">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                    <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                </div>
+            </div>
+        </div>
+
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-lg-12">
+          <h2 class="section-title mb-4">Dropping Soon...</h2>
+        </div>
+        
+        <div class="col-6 col-md-3 mb-4 position-relative">
+            <div class="coming-soon-badge">Feb 10</div>
+            <div class="product-item coming-soon-card">
+                <img src="images/1-Photoroom.png" class="img-fluid">
+                <h3 class="product-title mt-3">Secret Drop</h3>
+                <strong class="product-price">???</strong>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-3 mb-4 position-relative">
+            <div class="coming-soon-badge">Feb 14</div>
+            <div class="product-item coming-soon-card">
+                <img src="images/2-Photoroom.png" class="img-fluid">
+                <h3 class="product-title mt-3">Valentine Special</h3>
+                <strong class="product-price">???</strong>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+ <footer class="footer-section">
+        <div class="container relative">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="subscription-form">
+                        <h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Join the Drop List</span></h3>
+
+                        <form action="#" class="row g-3">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="col-auto">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary">
+                                    <span class="fa fa-paper-plane"></span>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap"><a href="index.html" class="footer-logo">DropZone<span>.</span></a></div>
+                    <p class="mb-4">Your primary source for verified authentic kicks. From limited-edition retros to the latest performance drops, we check the drip so you don't have to.</p>
+
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="ourstory.html">About us</a></li>
+                                <li><a href="authenticity.html">Authenticity Check</a></li>
+                                <li><a href="blog.html">Blog Drops</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="knowledge.html">Knowledge base</a></li>
+                                <li><a href="https://wa.me/919876543210" target="_blank">Live chat</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="jobs.html">Jobs</a></li>
+                                <li><a href="team.html">Our team</a></li>
+                                <li><a href="team.html">Leadership</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="all-kicks.html?brand=nike">Nike</a></li>
+                                <li><a href="all-kicks.html?brand=adidas">Adidas</a></li>
+                                <li><a href="all-kicks.html?brand=newbalance">New Balance</a></li>
+                                <li><a href="all-kicks.html?brand=converse">Converse</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://rostech.in">Raj Suryawanshi</a> Distributed By <a href="https://rostech.com">RosTech</a>  
+        </p>
+                    </div>
+
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <ul class="list-unstyled d-inline-flex ms-auto">
+                            <li class="me-4"><a href="terms.html">Terms &amp; Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/tiny-slider.js"></script>
+  <script src="js/custom.js"></script>
+  
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/user.js"></script>
+
+  <script>
+    // Simple Countdown Script
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minsEl = document.getElementById('mins');
+    const secsEl = document.getElementById('secs');
+
+    // Set a fake deadline (2 days from now)
+    let countDownDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000);
+
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      daysEl.innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+      hoursEl.innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+      minsEl.innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+      secsEl.innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.querySelector('.countdown-box').innerHTML = "DROP LIVE!";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>

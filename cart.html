@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Raj Suryawanshi">
+  <link rel="shortcut icon" href="favicom2.png">
+  <title>Your Cart - DropZone India</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  
+  <style>
+    .cart-img { max-width: 100px; border-radius: 10px; background: #f8f9fa; padding: 10px; }
+    .table-site th { background: #3b5d50; color: white; font-weight: 600; border: none; }
+    .table-site td { vertical-align: middle; }
+    .btn-checkout { background-color: #2f2f2f; color: white; border-radius: 30px; padding: 15px 30px; font-weight: 700; transition: 0.3s; display: block; width: 100%; text-align: center; text-decoration: none; }
+    .btn-checkout:hover { background-color: #3b5d50; color: white; }
+  </style>
+</head>
+
+<body>
+
+  <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">DropZone<span>.</span></a>
+      <div class="collapse navbar-collapse" id="navbarsFurni">
+        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="all-kicks.html">All Kicks</a></li>
+          <li><a class="nav-link" href="newdrops.html">New Drops</a></li>
+          <li><a class="nav-link" href="brands.html">Brands</a></li>
+          <li><a class="nav-link" href="ourstory.html">Our Story</a></li>
+          <li><a class="nav-link" href="contact.html">Support</a></li>
+        </ul>
+        <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+           <li style="margin-right: 20px;">
+                        <a class="nav-link" href="wishlist.html">
+                            <i class="fa-regular fa-heart" style="font-size: 22px; color:white; vertical-align: middle; margin-bottom: 2px;"></i>
+                        </a>
+                    </li>
+            <li style="margin-right: 20px;"><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+            <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="untree_co-section before-footer-section">
+    <div class="container">
+      <div class="row mb-5">
+        <form class="col-md-12" method="post">
+          <div class="site-blocks-table">
+            <table class="table table-site text-center">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Product</th>
+                  <th>Size</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              
+              <tbody id="cart-table-body">
+                </tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row mb-5">
+            <div class="col-md-6">
+              <a href="all-kicks.html" class="btn btn-outline-black btn-sm btn-block">Continue Shopping</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <label class="text-black h4" for="coupon">Coupon</label>
+              <p>Enter your coupon code if you have one.</p>
+            </div>
+            <div class="col-md-8 mb-3 mb-md-0">
+              <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-black">Apply Coupon</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 pl-5">
+          <div class="row justify-content-end">
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-md-12 text-right border-bottom mb-5">
+                  <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <span class="text-black">Subtotal</span>
+                </div>
+                <div class="col-md-6 text-right">
+                  <strong class="text-black" id="cart-subtotal">₹0</strong>
+                </div>
+              </div>
+              <div class="row mb-5">
+                <div class="col-md-6">
+                  <span class="text-black">Total</span>
+                </div>
+                <div class="col-md-6 text-right">
+                  <strong class="text-black" id="cart-total" style="color: #3b5d50; font-size: 1.2rem;">₹0</strong>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <a href="checkout.html" class="btn-checkout">Proceed To Checkout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <footer class="footer-section">
+        <div class="container relative">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="subscription-form">
+                        <h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Join the Drop List</span></h3>
+
+                        <form action="#" class="row g-3">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="col-auto">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary">
+                                    <span class="fa fa-paper-plane"></span>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap"><a href="index.html" class="footer-logo">DropZone<span>.</span></a></div>
+                    <p class="mb-4">Your primary source for verified authentic kicks. From limited-edition retros to the latest performance drops, we check the drip so you don't have to.</p>
+
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="ourstory.html">About us</a></li>
+                                <li><a href="authenticity.html">Authenticity Check</a></li>
+                                <li><a href="blog.html">Blog Drops</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="knowledge.html">Knowledge base</a></li>
+                                <li><a href="https://wa.me/919876543210" target="_blank">Live chat</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="jobs.html">Jobs</a></li>
+                                <li><a href="team.html">Our team</a></li>
+                                <li><a href="team.html">Leadership</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="all-kicks.html?brand=nike">Nike</a></li>
+                                <li><a href="all-kicks.html?brand=adidas">Adidas</a></li>
+                                <li><a href="all-kicks.html?brand=newbalance">New Balance</a></li>
+                                <li><a href="all-kicks.html?brand=converse">Converse</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://rostech.in">Raj Suryawanshi</a> Distributed By <a href="https://rostech.com">RosTech</a>  
+        </p>
+                    </div>
+
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <ul class="list-unstyled d-inline-flex ms-auto">
+                            <li class="me-4"><a href="terms.html">Terms &amp; Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/tiny-slider.js"></script>
+  <script src="js/custom.js"></script>
+  
+  <script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/user.js"></script> ```
+</body>
+</html>

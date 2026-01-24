@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Raj Suryawanshi">
+  <link rel="shortcut icon" href="favicom2.png">
+
+  <meta name="description" content="Browse the full collection of verified authentic sneakers at DropZone India." />
+  <meta name="keywords" content="Sneakers, Nike, Jordan, Adidas, Buy Shoes Online India" />
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>All Kicks - Browse Full Collection Of Sneakers</title>
+
+  <style>
+
+    /* All Kicks Hero */
+
+.hero-all-kicks {
+
+background-color: #3b5d50;
+
+padding: 50px 0;
+
+color: white;
+
+}
+
+    /* Sticky Sidebar Filter */
+    .filter-sidebar {
+        position: sticky;
+        top: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        z-index: 100;
+        background: #fff;
+    }
+    
+    .form-check-input:checked {
+        background-color: #3b5d50;
+        border-color: #3b5d50;
+    }
+
+    /* Product Card Enhancements */
+    .product-item {
+        transition: 0.3s all ease;
+        background: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        position: relative;
+        display: block;
+        text-decoration: none !important;
+        border: 1px solid transparent;
+        overflow: hidden;
+    }
+    
+    .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        border-color: #eee;
+    }
+
+    /* Wishlist Heart Icon */
+    .wishlist-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 10;
+        color: #ccc;
+        font-size: 1.4rem;
+        transition: all 0.2s ease;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .wishlist-btn:hover { color: #ff4d4d; transform: scale(1.1); }
+    .wishlist-btn.active-heart { color: #ff4d4d !important; animation: heartPulse 0.3s ease-in-out; }
+    .wishlist-btn.active-heart i { font-weight: 900 !important; }
+
+    @keyframes heartPulse { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
+
+    /* --- NEW BUTTON STYLES (MATCHING SCREENSHOTS) --- */
+
+    /* 1. Black Circle Button with Plus (Left) */
+    .btn-add-cart {
+        width: 40px; 
+        height: 40px;
+        background-color: #2f2f2f; /* Black Default */
+        color: white;
+        border-radius: 50%;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        text-decoration: none; 
+        transition: 0.3s;
+        border: none; 
+        cursor: pointer;
+    }
+    .btn-add-cart:hover { background-color: #3b5d50; transform: scale(1.1); }
+    .btn-add-cart i { font-size: 16px; }
+    
+    /* Active Tick State (Handled by JS) */
+    .active-tick { background-color: #3b5d50 !important; }
+
+    /* 2. Green Pill Button (Right) */
+    .btn-buy-now {
+        background-color: #3b5d50;
+        color: white;
+        border-radius: 30px; /* Pill Shape */
+        padding: 10px 24px;
+        font-size: 12px; 
+        font-weight: 800;
+        text-transform: uppercase; 
+        letter-spacing: 1px;
+        text-decoration: none !important; 
+        transition: 0.3s;
+        box-shadow: 0 4px 10px rgba(59, 93, 80, 0.2);
+    }
+    .btn-buy-now:hover {
+        background-color: #2f4858; 
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(47, 72, 88, 0.3);
+    }
+
+    .product-title { color: #2f2f2f; font-size: 16px; font-weight: 700; margin-top: 15px; text-align: center; }
+    .product-price { color: #3b5d50; font-weight: 800; font-size: 18px; display: block; margin-top: 5px; text-align: center; }
+
+    @media (max-width: 991px) {
+        .filter-sidebar { position: relative; top: 0; margin-bottom: 30px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">DropZone<span>.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsFurni">
+        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li class="active"><a class="nav-link" href="all-kicks.html">All Kicks</a></li>
+          <li><a class="nav-link" href="newdrops.html">New Drops</a></li>
+          <li><a class="nav-link" href="brands.html">Brands</a></li>
+          <li><a class="nav-link" href="ourstory.html">Our Story</a></li>
+          <li><a class="nav-link" href="contact.html">Support</a></li>
+        </ul>
+        <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <li style="margin-right: 20px;">
+                        <a class="nav-link" href="wishlist.html">
+                            <i class="fa-regular fa-heart" style="font-size: 22px; color:white; vertical-align: middle; margin-bottom: 2px;"></i>
+                        </a>
+                    </li>
+            <li style="margin-right: 20px;"><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+            <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   
+  <div class="hero-all-kicks">
+   <div class="container text-center">
+     <h1 class="fw-bold">The DropZone Full Vault</h1>
+     <p class="mb-0 text-white-50">Every drop, every brand, every size. Explore India's most trusted selection.</p>
+  </div>
+  </div>
+
+    <div class="untree_co-section product-section">
+    <div class="container">
+    <div class="row">
+            
+        <div class="col-lg-3">
+            <div class="filter-sidebar p-4" style="background: #ffffff; border-radius: 15px; border: 1px solid #eee;">
+                <h4 class="mb-4" style="color: #3b5d50; font-weight: 700;">Filters</h4>
+                
+                <div class="filter-group mb-4">
+                    <h6 class="fw-bold mb-3">Brands</h6>
+                    <div class="form-check mb-2"><input class="form-check-input brand-filter" type="checkbox" value="nike" id="brandNike"><label class="form-check-label" for="brandNike">Nike</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input brand-filter" type="checkbox" value="adidas" id="brandAdidas"><label class="form-check-label" for="brandAdidas">Adidas</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input brand-filter" type="checkbox" value="jordan" id="brandJordan"><label class="form-check-label" for="brandJordan">Jordan</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input brand-filter" type="checkbox" value="newbalance" id="brandNB"><label class="form-check-label" for="brandNB">New Balance</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input brand-filter" type="checkbox" value="yeezy" id="brandYeezy"><label class="form-check-label" for="brandYeezy">Yeezy</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input brand-filter" type="checkbox" value="converse" id="brandConverse"><label class="form-check-label" for="brandConverse">Converse</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input brand-filter" type="checkbox" value="crocs" id="brandCrocs"><label class="form-check-label" for="brandCrocs">Crocs</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input brand-filter" type="checkbox" value="vans" id="brandVans"><label class="form-check-label" for="brandVans">Vans</label></div>
+                    <div class="form-check mb-2"><input class="form-check-input brand-filter" type="checkbox" value="asics" id="brandAsics"><label class="form-check-label" for="brandAsics">Asics</label></div>
+                </div>
+
+                <hr>
+
+                <div class="filter-group mt-4">
+                    <h6 class="fw-bold mb-3">Max Price: <span id="priceVal">₹50000</span></h6>
+                    <input type="range" class="form-range" min="2000" max="50000" step="500" id="priceRange" oninput="document.getElementById('priceVal').innerText='₹'+this.value">
+                </div>
+
+                <button class="btn btn-primary w-100 mt-4 btn-sm rounded-pill" onclick="applyFilters()">Apply Filters</button>
+                <button class="btn btn-outline-secondary w-100 mt-2 btn-sm rounded-pill" onclick="clearFilters()">Clear All</button>
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+            <div class="row" id="product-grid">
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="nike" data-price="8295">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'nike-panda', 'Nike Dunk Low Panda', '₹8,295', 'images/productshoe1 (1)-Photoroom.png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=nike-panda" class="text-decoration-none d-block">
+                            <img src="images/productshoe1 (1)-Photoroom.png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Nike Dunk Low 'Panda'</h3>
+                            <strong class="product-price">₹8,295</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'nike-panda', 'Nike Dunk Low Panda', '₹8,295', 'images/productshoe1 (1)-Photoroom.png')">
+                                <i class="fa-solid fa-plus"></i> </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="jordan" data-price="16495">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'jordan-1-high', 'Jordan 1 Retro High', '₹16,495', 'images/productshoe1-Photoroom.png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=jordan-1-high" class="text-decoration-none d-block">
+                            <img src="images/productshoe1-Photoroom.png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Jordan 1 Retro High</h3>
+                            <strong class="product-price">₹16,495</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'jordan-1-high', 'Jordan 1 Retro High', '₹16,495', 'images/productshoe1-Photoroom.png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="newbalance" data-price="10999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'nb-550', 'New Balance 550', '₹10,999', 'images/3-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=nb-550" class="text-decoration-none d-block">
+                            <img src="images/3-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">New Balance 550</h3>
+                            <strong class="product-price">₹10,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'nb-550', 'New Balance 550', '₹10,999', 'images/3-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="yeezy" data-price="22999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'yeezy-350', 'Yeezy Boost 350 V2', '₹22,999', 'images/4-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=yeezy-350" class="text-decoration-none d-block">
+                            <img src="images/4-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Yeezy Boost 350 V2</h3>
+                            <strong class="product-price">₹22,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'yeezy-350', 'Yeezy Boost 350 V2', '₹22,999', 'images/4-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="nike" data-price="7495">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'af1', 'Nike Air Force 1 \'07', '₹7,495', 'images/5-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=af1" class="text-decoration-none d-block">
+                            <img src="images/5-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Nike Air Force 1 '07</h3>
+                            <strong class="product-price">₹7,495</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'af1', 'Nike Air Force 1', '₹7,495', 'images/5-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="jordan" data-price="28499">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'jordan-4', 'Jordan 4 Retro', '₹28,499', 'images/6-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=jordan-4" class="text-decoration-none d-block">
+                            <img src="images/6-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Jordan 4 Retro</h3>
+                            <strong class="product-price">₹28,499</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'jordan-4', 'Jordan 4 Retro', '₹28,499', 'images/6-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="newbalance" data-price="14999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'nb-9060', 'New Balance 9060', '₹14,999', 'images/7-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=nb-9060" class="text-decoration-none d-block">
+                            <img src="images/7-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">New Balance 9060</h3>
+                            <strong class="product-price">₹14,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'nb-9060', 'New Balance 9060', '₹14,999', 'images/7-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="adidas" data-price="9999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'samba', 'Adidas Samba OG', '₹9,999', 'images/8-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=samba" class="text-decoration-none d-block">
+                            <img src="images/8-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Adidas Samba OG</h3>
+                            <strong class="product-price">₹9,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'samba', 'Adidas Samba OG', '₹9,999', 'images/8-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="converse" data-price="5999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'converse-70', 'Converse Chuck 70', '₹5,999', 'images/9-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=converse-70" class="text-decoration-none d-block">
+                            <img src="images/9-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Converse Chuck 70</h3>
+                            <strong class="product-price">₹5,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'converse-70', 'Converse Chuck 70', '₹5,999', 'images/9-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="crocs" data-price="7999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'crocs', 'Crocs Pollex Clog', '₹7,999', 'images/10-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=crocs" class="text-decoration-none d-block">
+                            <img src="images/10-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Crocs Pollex Clog</h3>
+                            <strong class="product-price">₹7,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'crocs', 'Crocs Pollex Clog', '₹7,999', 'images/10-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="nike" data-price="12495">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'sb-dunk', 'Nike SB Dunk Low', '₹12,495', 'images/11-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=sb-dunk" class="text-decoration-none d-block">
+                            <img src="images/11-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Nike SB Dunk Low</h3>
+                            <strong class="product-price">₹12,495</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'sb-dunk', 'Nike SB Dunk Low', '₹12,495', 'images/11-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="jordan" data-price="18995">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'jordan-3', 'Jordan 3 Retro', '₹18,995', 'images/12-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=jordan-3" class="text-decoration-none d-block">
+                            <img src="images/12-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Jordan 3 Retro</h3>
+                            <strong class="product-price">₹18,995</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'jordan-3', 'Jordan 3 Retro', '₹18,995', 'images/12-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="yeezy" data-price="9999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'yeezy-slide', 'Adidas Yeezy Slide', '₹9,999', 'images/13-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=yeezy-slide" class="text-decoration-none d-block">
+                            <img src="images/13-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Adidas Yeezy Slide</h3>
+                            <strong class="product-price">₹9,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'yeezy-slide', 'Adidas Yeezy Slide', '₹9,999', 'images/13-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="nike" data-price="10295">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'airmax-90', 'Nike Air Max 90', '₹10,295', 'images/14-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=airmax-90" class="text-decoration-none d-block">
+                            <img src="images/14-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Nike Air Max 90</h3>
+                            <strong class="product-price">₹10,295</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'airmax-90', 'Nike Air Max 90', '₹10,295', 'images/14-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="vans" data-price="4499">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'vans', 'Vans Old Skool', '₹4,499', 'images/15-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=vans" class="text-decoration-none d-block">
+                            <img src="images/15-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Vans Old Skool</h3>
+                            <strong class="product-price">₹4,499</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'vans', 'Vans Old Skool', '₹4,499', 'images/15-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="asics" data-price="8999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'asics', 'Asics Gel-Lyte III', '₹8,999', 'images/16-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=asics" class="text-decoration-none d-block">
+                            <img src="images/16-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Asics Gel-Lyte III</h3>
+                            <strong class="product-price">₹8,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'asics', 'Asics Gel-Lyte III', '₹8,999', 'images/16-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="nike" data-price="7995">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'blazer', 'Nike Blazer Mid \'77', '₹7,995', 'images/17-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=blazer" class="text-decoration-none d-block">
+                            <img src="images/17-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Nike Blazer Mid '77</h3>
+                            <strong class="product-price">₹7,995</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'blazer', 'Nike Blazer Mid', '₹7,995', 'images/17-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="jordan" data-price="8995">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'jordan-1-low', 'Jordan 1 Low', '₹8,995', 'images/18-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=jordan-1-low" class="text-decoration-none d-block">
+                            <img src="images/18-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Jordan 1 Low</h3>
+                            <strong class="product-price">₹8,995</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'jordan-1-low', 'Jordan 1 Low', '₹8,995', 'images/18-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="newbalance" data-price="12999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'nb-2002r', 'New Balance 2002R', '₹12,999', 'images/19-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=nb-2002r" class="text-decoration-none d-block">
+                            <img src="images/19-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">New Balance 2002R</h3>
+                            <strong class="product-price">₹12,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'nb-2002r', 'New Balance 2002R', '₹12,999', 'images/19-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="adidas" data-price="8999">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'forum', 'Adidas Forum Low', '₹8,999', 'images/20-Photoroom (1).png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=forum" class="text-decoration-none d-block">
+                            <img src="images/20-Photoroom (1).png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Adidas Forum Low</h3>
+                            <strong class="product-price">₹8,999</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'forum', 'Adidas Forum Low', '₹8,999', 'images/20-Photoroom (1).png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5 product-card" data-brand="converse" data-price="4949">
+                    <div class="product-item">
+                        <a href="#" class="wishlist-btn" onclick="toggleWishlist(event, this)"><i class="fa-regular fa-heart"></i></a>
+                        <a href="#" class="wishlist-btn" 
+   onclick="toggleWishlist(this, 'converse-puff', 'Converse Puff Low Top', '₹4,949', 'images/21-Photoroom.png')">
+    <i class="fa-regular fa-heart"></i>
+</a>
+                        <a href="product-details.html?id=converse-puff" class="text-decoration-none d-block">
+                            <img src="images/21-Photoroom.png" class="img-fluid product-thumbnail">
+                            <h3 class="product-title mt-3">Converse Puff Low Top</h3>
+                            <strong class="product-price">₹4,949</strong>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="javascript:void(0);" class="btn-add-cart" onclick="addToCart(this, 'converse-puff', 'Converse Puff Low', '₹4,949', 'images/21-Photoroom.png')">
+                                <i class="fa-solid fa-plus"></i>
+                            </a>
+                            <a href="checkout.html" class="btn-buy-now">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-section">
+        <div class="container relative">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="subscription-form">
+                        <h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Join the Drop List</span></h3>
+
+                        <form action="#" class="row g-3">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="col-auto">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary">
+                                    <span class="fa fa-paper-plane"></span>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap"><a href="index.html" class="footer-logo">DropZone<span>.</span></a></div>
+                    <p class="mb-4">Your primary source for verified authentic kicks. From limited-edition retros to the latest performance drops, we check the drip so you don't have to.</p>
+
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="ourstory.html">About us</a></li>
+                                <li><a href="authenticity.html">Authenticity Check</a></li>
+                                <li><a href="blog.html">Blog Drops</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="knowledge.html">Knowledge base</a></li>
+                                <li><a href="https://wa.me/919876543210" target="_blank">Live chat</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="jobs.html">Jobs</a></li>
+                                <li><a href="team.html">Our team</a></li>
+                                <li><a href="team.html">Leadership</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="all-kicks.html?brand=nike">Nike</a></li>
+                                <li><a href="all-kicks.html?brand=adidas">Adidas</a></li>
+                                <li><a href="all-kicks.html?brand=newbalance">New Balance</a></li>
+                                <li><a href="all-kicks.html?brand=converse">Converse</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://rostech.in">Raj Suryawanshi</a> Distributed By <a href="https://rostech.com">RosTech</a>  
+        </p>
+                    </div>
+
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <ul class="list-unstyled d-inline-flex ms-auto">
+                            <li class="me-4"><a href="terms.html">Terms &amp; Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/tiny-slider.js"></script>
+  <script src="js/custom.js"></script>
+
+  <script>
+    // 1. Wishlist Toggle
+    function toggleWishlist(event, btn) {
+        event.preventDefault();
+        const icon = btn.querySelector('i');
+        if (btn.classList.contains('active-heart')) {
+            btn.classList.remove('active-heart');
+            icon.classList.remove('fa-solid');
+            icon.classList.add('fa-regular');
+        } else {
+            btn.classList.add('active-heart');
+            icon.classList.remove('fa-regular');
+            icon.classList.add('fa-solid');
+        }
+    }
+
+    // 2. MAIN FILTER LOGIC
+    function applyFilters() {
+        const selectedBrands = Array.from(document.querySelectorAll('.brand-filter:checked')).map(cb => cb.value);
+        const maxPrice = parseInt(document.getElementById('priceRange').value);
+        
+        const products = document.querySelectorAll('.product-card');
+
+        products.forEach(card => {
+            const cardBrand = card.getAttribute('data-brand');
+            const cardPrice = parseInt(card.getAttribute('data-price'));
+
+            const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(cardBrand);
+            const priceMatch = cardPrice <= maxPrice;
+
+            if (brandMatch && priceMatch) {
+                card.style.display = 'block'; 
+            } else {
+                card.style.display = 'none'; 
+            }
+        });
+    }
+
+    // 3. Clear Filters
+    function clearFilters() {
+        document.querySelectorAll('.brand-filter').forEach(cb => cb.checked = false);
+        document.getElementById('priceRange').value = 50000;
+        document.getElementById('priceVal').innerText = "₹50000";
+        applyFilters(); 
+    }
+
+    // 4. AUTO-RUN ON LOAD (Handles redirect from Brands Page)
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const brandQuery = urlParams.get('brand'); 
+
+        if (brandQuery) {
+            document.querySelectorAll('.brand-filter').forEach(cb => {
+                if(cb.value === brandQuery.toLowerCase()) {
+                    cb.checked = true;
+                }
+            });
+            applyFilters();
+        }
+    });
+  </script>
+  <script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/user.js"></script> ```
+</html>
+</body>
+</html>
+
+

@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Raj Suryawanshi">
+  <link rel="shortcut icon" href="favicom2.png">
+  <title>Product Details - DropZone India</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* Details Page Specific Styling */
+    .product-main-img {
+        background-color: #f8f9fa;
+        border-radius: 20px;
+        padding: 40px;
+        transition: 0.3s;
+    }
+    .product-main-img:hover { transform: scale(1.02); }
+    
+    .size-btn {
+        border: 1px solid #dee2e6;
+        background: white;
+        color: #2f2f2f;
+        padding: 10px 15px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    .size-btn:hover, .size-btn.active-size {
+        background-color: #3b5d50;
+        color: white;
+        border-color: #3b5d50;
+    }
+    
+    .auth-badge {
+        background: #e8f5e9;
+        color: #2e7d32;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    /* Buy Now Button */
+    .btn-buy-lg {
+        background-color: #3b5d50;
+        color: white;
+        width: 100%;
+        padding: 15px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 18px;
+        border: none;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .btn-buy-lg:hover { background-color: #2f4858; color: white; }
+
+    /* Add to Cart Button Styling */
+    .btn-cart-lg {
+        background-color: transparent;
+        border: 2px solid #2f2f2f;
+        color: #2f2f2f;
+        width: 100%;
+        padding: 15px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+    .btn-cart-lg:hover {
+        background-color: #2f2f2f;
+        color: white;
+    }
+    
+    .wishlist-btn-lg {
+        font-size: 24px;
+        color: #ccc;
+        cursor: pointer;
+        border: 1px solid #eee;
+        padding: 10px 14px;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+    .wishlist-btn-lg:hover { background-color: #f8f9fa; }
+    .wishlist-btn-lg.active { color: #ff4d4d; font-weight: 900; border-color: #ff4d4d; }
+  </style>
+</head>
+
+<body>
+
+  <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">DropZone<span>.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsFurni">
+        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="all-kicks.html">All Kicks</a></li>
+          <li><a class="nav-link" href="newdrops.html">New Drops</a></li>
+          <li><a class="nav-link" href="brands.html">Brands</a></li>
+          <li><a class="nav-link" href="ourstory.html">Our Story</a></li>
+          <li><a class="nav-link" href="contact.html">Support</a></li>
+        </ul>
+        <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+            <li style="margin-right: 20px;">
+                        <a class="nav-link" href="wishlist.html">
+                            <i class="fa-regular fa-heart" style="font-size: 22px; color:white; vertical-align: middle; margin-bottom: 2px;"></i>
+                        </a>
+                    </li>
+            <li style="margin-right: 20px;"><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+            <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="untree_co-section">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-6 mb-5 mb-md-0">
+            <div class="product-main-img text-center">
+                <img id="product-img" src="" alt="Loading..." class="img-fluid" style="max-height: 400px; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="auth-badge"><i class="fa-solid fa-check-circle me-2"></i> Verified Authentic</div>
+            
+            <h1 id="product-title" class="mb-2" style="font-weight: 800; color: #2f2f2f;">Loading...</h1>
+            <p class="text-muted mb-4">Brand New / Deadstock / Original Packaging</p>
+            
+            <h2 id="product-price" class="mb-4" style="color: #3b5d50; font-weight: 700;">₹0</h2>
+
+            <p class="mb-4">This product is verified authentic by DropZone India. It ships double-boxed with all original accessories and packaging. Order now for priority dispatch.</p>
+
+            <div class="mb-4">
+                <h6 class="font-weight-bold mb-3">Select Size (UK/India)</h6>
+                <div class="d-flex flex-wrap">
+                    <button class="size-btn" onclick="selectSize(this)">UK 6</button>
+                    <button class="size-btn" onclick="selectSize(this)">UK 7</button>
+                    <button class="size-btn" onclick="selectSize(this)">UK 8</button>
+                    <button class="size-btn" onclick="selectSize(this)">UK 9</button>
+                    <button class="size-btn" onclick="selectSize(this)">UK 10</button>
+                    <button class="size-btn" onclick="selectSize(this)">UK 11</button>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-2">
+                    <div class="wishlist-btn-lg text-center" onclick="this.classList.toggle('active')">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <button class="btn btn-cart-lg" onclick="addToCartFromDetails()">
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="col-5">
+                    <a href="checkout.html" class="btn btn-buy-lg">Buy Now</a>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <p class="small text-muted"><i class="fa-solid fa-truck-fast me-2"></i> Free Delivery across India</p>
+                <p class="small text-muted"><i class="fa-solid fa-rotate-left me-2"></i> 7-Day Easy Returns</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <footer class="footer-section">
+        <div class="container relative">
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="subscription-form">
+                        <h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Join the Drop List</span></h3>
+
+                        <form action="#" class="row g-3">
+                            <div class="col-auto">
+                                <input type="text" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="col-auto">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary">
+                                    <span class="fa fa-paper-plane"></span>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap"><a href="index.html" class="footer-logo">DropZone<span>.</span></a></div>
+                    <p class="mb-4">Your primary source for verified authentic kicks. From limited-edition retros to the latest performance drops, we check the drip so you don't have to.</p>
+
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="ourstory.html">About us</a></li>
+                                <li><a href="authenticity.html">Authenticity Check</a></li>
+                                <li><a href="blog.html">Blog Drops</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="knowledge.html">Knowledge base</a></li>
+                                <li><a href="https://wa.me/919876543210" target="_blank">Live chat</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="jobs.html">Jobs</a></li>
+                                <li><a href="team.html">Our team</a></li>
+                                <li><a href="team.html">Leadership</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="all-kicks.html?brand=nike">Nike</a></li>
+                                <li><a href="all-kicks.html?brand=adidas">Adidas</a></li>
+                                <li><a href="all-kicks.html?brand=newbalance">New Balance</a></li>
+                                <li><a href="all-kicks.html?brand=converse">Converse</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://rostech.in">Raj Suryawanshi</a> Distributed By <a href="https://rostech.com">RosTech</a>  
+        </p>
+                    </div>
+
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <ul class="list-unstyled d-inline-flex ms-auto">
+                            <li class="me-4"><a href="terms.html">Terms &amp; Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // 1. The Product Database (All 24 Products)
+    const products = {
+        // --- Index Page Products ---
+        'nb-bb550-home': { title: "NB BB550", price: "₹8,699", img: "images/nb1.png" },
+        'nb-574-home': { title: "NB 574 Legacy Suede", price: "₹7,149", img: "images/nb2.png" },
+        'nb-373-home': { title: "NB 373 Suede", price: "₹4,269", img: "images/nb3.png" },
+
+        // --- All Kicks Page Products ---
+        'nike-panda': { title: "Nike Dunk Low 'Panda'", price: "₹8,295", img: "images/productshoe1 (1)-Photoroom.png" },
+        'jordan-1-high': { title: "Jordan 1 Retro High", price: "₹16,495", img: "images/productshoe1-Photoroom.png" },
+        'nb-550': { title: "New Balance 550", price: "₹10,999", img: "images/3-Photoroom (1).png" },
+        'yeezy-350': { title: "Yeezy Boost 350 V2", price: "₹22,999", img: "images/4-Photoroom (1).png" },
+        'af1': { title: "Nike Air Force 1 '07", price: "₹7,495", img: "images/5-Photoroom (1).png" },
+        'jordan-4': { title: "Jordan 4 Retro", price: "₹28,499", img: "images/6-Photoroom (1).png" },
+        'nb-9060': { title: "New Balance 9060", price: "₹14,999", img: "images/7-Photoroom (1).png" },
+        'samba': { title: "Adidas Samba OG", price: "₹9,999", img: "images/8-Photoroom (1).png" },
+        'converse-70': { title: "Converse Chuck 70", price: "₹5,999", img: "images/9-Photoroom (1).png" },
+        'crocs': { title: "Crocs Pollex Clog", price: "₹7,999", img: "images/10-Photoroom (1).png" },
+        'sb-dunk': { title: "Nike SB Dunk Low", price: "₹12,495", img: "images/11-Photoroom (1).png" },
+        'jordan-3': { title: "Jordan 3 Retro", price: "₹18,995", img: "images/12-Photoroom (1).png" },
+        'yeezy-slide': { title: "Adidas Yeezy Slide", price: "₹9,999", img: "images/13-Photoroom (1).png" },
+        'airmax-90': { title: "Nike Air Max 90", price: "₹10,295", img: "images/14-Photoroom (1).png" },
+        'vans': { title: "Vans Old Skool", price: "₹4,499", img: "images/15-Photoroom (1).png" },
+        'asics': { title: "Asics Gel-Lyte III", price: "₹8,999", img: "images/16-Photoroom (1).png" },
+        'blazer': { title: "Nike Blazer Mid '77", price: "₹7,995", img: "images/17-Photoroom (1).png" },
+        'jordan-1-low': { title: "Jordan 1 Low", price: "₹8,995", img: "images/18-Photoroom (1).png" },
+        'nb-2002r': { title: "New Balance 2002R", price: "₹12,999", img: "images/19-Photoroom (1).png" },
+        'forum': { title: "Adidas Forum Low", price: "₹8,999", img: "images/20-Photoroom (1).png" },
+        'converse-puff': { title: "Converse Puff Low", price: "₹4,949", img: "images/21-Photoroom.png" }
+    };
+
+    // 2. Logic to Read URL and Update Page
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    const product = products[productId];
+
+    if (product) {
+        document.getElementById('product-title').innerText = product.title;
+        document.getElementById('product-price').innerText = product.price;
+        document.getElementById('product-img').src = product.img;
+        document.title = product.title + " | DropZone";
+    } else {
+        document.getElementById('product-title').innerText = "Product Not Found";
+    }
+
+    // 3. Size Selector Logic
+    function selectSize(btn) {
+        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active-size'));
+        btn.classList.add('active-size');
+    }
+
+    // 4. ADD TO CART LOGIC (Connects to cart.js)
+    function addToCartFromDetails() {
+        if (product) {
+            addToCart(productId, product.title, product.price, product.img);
+        } else {
+            alert("Product info not found.");
+        }
+    }
+  </script>
+  
+  <script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/user.js"></script> ```
+</body>
+</html> 
