@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore | CastCircle</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="left-sidebar">
+            <div class="brand">
+                <div class="logo-circle"><i class="fas fa-microphone-lines"></i></div>
+                <span class="brand-name">CastCircle</span>
+            </div>
+            <div class="menu-item" onclick="window.location.href='index.html'">
+                <i class="fas fa-home"></i> <span>Home Feed</span>
+            </div>
+            <div class="menu-item active">
+                <i class="far fa-compass"></i> <span>Explore</span>
+            </div>
+        </aside>
+
+        <main class="center-feed">
+            <h2 style="margin-bottom: 20px; font-weight: 700;">Discover</h2>
+            
+            <div class="explore-grid">
+                <div class="category-card purple">
+                    <i class="fas fa-robot"></i>
+                    <h3>Tech & AI</h3>
+                    <p>120+ Episodes</p>
+                </div>
+                <div class="category-card orange">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Startups</h3>
+                    <p>85+ Episodes</p>
+                </div>
+                <div class="category-card blue">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Finance</h3>
+                    <p>200+ Episodes</p>
+                </div>
+                <div class="category-card green">
+                    <i class="fas fa-brain"></i>
+                    <h3>Motivation</h3>
+                    <p>340+ Episodes</p>
+                </div>
+            </div>
+
+            <h3 style="margin: 30px 0 15px;">Trending Creators</h3>
+            <div class="creators-list" id="creators-container">
+                </div>
+        </main>
+
+        <aside class="right-sidebar">
+            <div class="profile-header">
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=11" id="user-avatar-small">
+                    <span id="user-name-small">Me</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline script to load trending creators for Explore page
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('creators-container');
+            const creators = [
+                { name: "Lex Fridman", img: "11", bio: "AI & Deep Tech" },
+                { name: "Andrew Huberman", img: "5", bio: "Neuroscience" },
+                { name: "Indie Hackers", img: "33", bio: "Business" }
+            ];
+
+            creators.forEach(c => {
+                const div = document.createElement('div');
+                div.className = 'event-card'; // Reuse card style
+                div.style.alignItems = 'center';
+                div.innerHTML = `
+                    <img src="https://i.pravatar.cc/150?img=${c.img}" style="width:60px; height:60px; border-radius:50%; margin-right:15px;">
+                    <div style="flex:1;">
+                        <h4 style="margin:0;">${c.name}</h4>
+                        <p style="font-size:12px; color:#888; margin:0;">${c.bio}</p>
+                    </div>
+                    <button class="btn-play" style="width:auto; padding: 8px 15px;">Follow</button>
+                `;
+                container.appendChild(div);
+            });
+        });
+    </script>
+</body>
+</html>

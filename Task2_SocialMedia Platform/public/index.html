@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CastCircle | Audio Community</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="left-sidebar">
+            <div class="brand">
+                <div class="logo-circle"><i class="fas fa-microphone-lines"></i></div>
+                <span class="brand-name">CastCircle</span>
+            </div>
+
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Find creators...">
+            </div>
+
+            <div class="sidebar-section">
+                <h3>CATEGORIES</h3>
+                <div class="menu-item active">
+                    <span class="icon-box purple"><i class="fas fa-microchip"></i></span>
+                    <span>Tech & AI</span>
+                </div>
+                <div class="menu-item">
+                    <span class="icon-box orange"><i class="fas fa-rocket"></i></span>
+                    <span>Startups</span>
+                </div>
+                <div class="menu-item">
+                    <span class="icon-box blue"><i class="fas fa-chart-line"></i></span>
+                    <span>Finance</span>
+                </div>
+                <div class="menu-item">
+                    <span class="icon-box green"><i class="fas fa-brain"></i></span>
+                    <span>Motivation</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>YOUR NETWORK</h3>
+                <div class="friend-row">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="User">
+                    <span>Elon Fanboy</span>
+                    <span class="listening-badge">🎧 Listening</span>
+                </div>
+                <div class="friend-row">
+                    <img src="https://i.pravatar.cc/150?img=9" alt="User">
+                    <span>Sarah Founder</span>
+                    <span class="time">10m ago</span>
+                </div>
+                <div class="friend-row">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="User">
+                    <span>Dev Guru</span>
+                    <span class="listening-badge">🎧 Listening</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="center-feed">
+            
+            <header class="top-nav">
+                <div class="nav-icons">
+                    <div class="nav-btn active"><i class="fas fa-home"></i></div>
+                    <div class="nav-btn"><i class="fas fa-compass"></i></div> <div class="nav-btn"><i class="fas fa-plus-square"></i></div> <div class="nav-btn"><i class="fas fa-bell"></i></div>
+                    <div class="nav-btn"><i class="fas fa-user-circle"></i></div>
+                </div>
+            </header>
+
+            <div class="stories-row">
+                <div class="story">
+                    <div class="story-ring active"><img src="https://i.pravatar.cc/150?img=60" alt=""></div>
+                    <span>Lex Fridman</span>
+                </div>
+                <div class="story">
+                    <div class="story-ring active"><img src="https://i.pravatar.cc/150?img=11" alt=""></div>
+                    <span>The Daily</span>
+                </div>
+                <div class="story">
+                    <div class="story-ring"><img src="https://i.pravatar.cc/150?img=33" alt=""></div>
+                    <span>Indie Hackers</span>
+                </div>
+                <div class="story">
+                    <div class="story-ring"><img src="https://i.pravatar.cc/150?img=5" alt=""></div>
+                    <span>Huberman</span>
+                </div>
+                <div class="story">
+                    <div class="story-ring"><img src="https://i.pravatar.cc/150?img=8" alt=""></div>
+                    <span>Naval</span>
+                </div>
+            </div>
+
+            <div class="content-grid" id="feed-container">
+                
+                <div class="event-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1614149162883-504ce4d13909?w=600&q=80" alt="AI Art">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="card-details">
+                        <div class="category-tag">Artificial Intelligence</div>
+                        <h3>The Future of Coding with LLMs</h3>
+                        
+                        <div class="meta-row">
+                            <img src="https://i.pravatar.cc/150?img=11" class="host-avatar">
+                            <div>
+                                <span class="host-name">Raj Suryawanshi</span>
+                                <span class="episode-time">2 hrs 14 min • Ep #42</span>
+                            </div>
+                        </div>
+
+                        <p class="description">Are developers becoming obsolete, or are we becoming architects? We discuss the shift from writing syntax to prompting logic.</p>
+                        
+                        <div class="card-footer">
+                            <button class="btn-play"><i class="fas fa-play"></i> Play Episode</button>
+                            <div class="actions">
+                                <span class="action-btn"><i class="far fa-heart"></i> 1.2k</span>
+                                <span class="action-btn"><i class="far fa-comment-dots"></i> 342</span>
+                                <span class="action-btn"><i class="far fa-bookmark"></i> Save</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Startup">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="card-details">
+                        <div class="category-tag orange">Startups</div>
+                        <h3>0 to $1M ARR: The Real Guide</h3>
+                        
+                        <div class="meta-row">
+                            <img src="https://i.pravatar.cc/150?img=32" class="host-avatar">
+                            <div>
+                                <span class="host-name">Sarah Jenkins</span>
+                                <span class="episode-time">45 min • Ep #108</span>
+                            </div>
+                        </div>
+
+                        <p class="description">Forget the unicorn hype. Here is exactly how to build a boring business that prints cash.</p>
+                        
+                        <div class="card-footer">
+                            <button class="btn-play"><i class="fas fa-play"></i> Play Episode</button>
+                            <div class="actions">
+                                <span class="action-btn"><i class="far fa-heart"></i> 856</span>
+                                <span class="action-btn"><i class="far fa-comment-dots"></i> 120</span>
+                                <span class="action-btn"><i class="far fa-bookmark"></i> Save</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <aside class="right-sidebar">
+            <div class="profile-header">
+                <div class="streak-badge">🔥 12 Day Streak</div>
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=60" alt="">
+                    <span>Raj</span>
+                </div>
+            </div>
+
+            <div class="chat-module">
+                <div class="chat-header-area">
+                    <h4>Trending Discussion 🎙️</h4>
+                    <p>Discussing: <strong>The AI Revolution</strong></p>
+                </div>
+
+                <div class="chat-messages">
+                    <div class="pinned-msg">
+                        <i class="fas fa-thumbtack"></i>
+                        <p><strong>Host:</strong> What's your take on AI ethics? Let's debate below! 👇</p>
+                    </div>
+
+                    <div class="msg-row">
+                        <img src="https://i.pravatar.cc/150?img=41">
+                        <div class="msg-content">
+                            <h4>Suny Suka <span class="time">2m</span></h4>
+                            <p>I think we need regulation before it's too late.</p>
+                        </div>
+                    </div>
+
+                    <div class="msg-row">
+                        <div class="avatar-initials blue">AB</div>
+                        <div class="msg-content">
+                            <h4>Arman Bahir <span class="time">5m</span></h4>
+                            <p>Regulation kills innovation. Let it run! 🚀</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="input-wrapper">
+                        <input type="text" placeholder="Join the debate...">
+                        <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div class="sticky-player">
+        <div class="player-track">
+            <img src="https://images.unsplash.com/photo-1614149162883-504ce4d13909?w=600&q=80" alt="Cover">
+            <div>
+                <h5>The Future of Coding</h5>
+                <span>Raj Suryawanshi</span>
+            </div>
+            <i class="far fa-heart"></i>
+        </div>
+
+        <div class="player-controls">
+            <div class="control-buttons">
+                <i class="fas fa-random"></i>
+                <i class="fas fa-step-backward"></i>
+                <div class="main-play-btn"><i class="fas fa-play"></i></div>
+                <i class="fas fa-step-forward"></i>
+                <i class="fas fa-undo"></i>
+            </div>
+            <div class="progress-container">
+                <span>04:12</span>
+                <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
+                <span>45:00</span>
+            </div>
+        </div>
+
+        <div class="player-volume">
+            <span class="speed-badge">1.5x</span> <i class="fas fa-volume-up"></i>
+            <div class="volume-bar"><div class="volume-fill"></div></div>
+        </div>
+    </div>
+
+<div id="uploadModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload New Episode</h3>
+                <i class="fas fa-times" onclick="closeModal()"></i>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="p_title" placeholder="Episode Title">
+                <input type="text" id="p_desc" placeholder="Description (What's this episode about?)">
+                <select id="p_category">
+                    <option value="Tech">Tech & AI</option>
+                    <option value="Startups">Startups</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Motivation">Motivation</option>
+                </select>
+                <input type="text" id="p_audio" placeholder="Audio URL (MP3 Link)">
+                <input type="text" id="p_image" placeholder="Cover Image URL">
+                <button class="btn-upload" onclick="uploadPodcast()">🚀 Publish Episode</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

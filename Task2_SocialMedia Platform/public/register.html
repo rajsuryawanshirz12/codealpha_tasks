@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us | CastCircle</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+    
+    <div class="auth-glass-card">
+        <div class="auth-logo">
+            <i class="fas fa-user-plus"></i>
+        </div>
+        <h2>Create Account</h2>
+        <p>Join the future of audio content.</p>
+
+        <form onsubmit="handleRegister(event)">
+            <div class="glass-input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" placeholder="Full Name" required>
+            </div>
+
+            <div class="glass-input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="hello@example.com" required>
+            </div>
+            
+            <div class="glass-input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Create Password" required>
+            </div>
+
+            <button type="submit" class="btn-glass">Get Started</button>
+        </form>
+
+        <p class="bottom-link">
+            Already a member? <a href="login.html">Sign In</a>
+        </p>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
